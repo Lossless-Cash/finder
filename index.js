@@ -12,7 +12,7 @@ const filter = {
 const reporting = new LosslessReporting();
 
 async function handleEvent(event) {
-  const [newAdmin] =  ethers.utils.defaultAbiCoder.decode(['address'], event.topics[2]);;
+  const [newAdmin] =  ethers.utils.defaultAbiCoder.decode(['address'], event.topics[2]);
   await reporting.report(TOKEN_TO_PROTECT, newAdmin);
   console.log("Report submitted!");
 }
