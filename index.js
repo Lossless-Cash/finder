@@ -2,7 +2,7 @@ const { LosslessReporting, provider, ethers } = require('@losslesscash/lossless-
 
 const TOKEN_TO_PROTECT = "0x...";
 const ADMIN_CONTRACT = "0x...";
-const TOPICS = [ethers.utils.id("OwnershipTransferred(address,address)")]
+const TOPICS = [ethers.utils.id("OwnershipTransferred(address,address)")];
 
 const filter = {
   address: ADMIN_CONTRACT,
@@ -18,8 +18,8 @@ async function handleEvent(event) {
 }
 
 function main() {
-  console.log("Starting monitoring")
-  provider.on(filter, handleEvent)
+  console.log("Starting monitoring");
+  provider.on(filter, handleEvent);
 }
 
 main();
